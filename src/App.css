@@ -2,3 +2,8 @@ body{
   background-color: #2D3047;
   font-family: "Roboto Slab", serif;;
 }
+
+.main{
+  display: flex;
+  justify-content: space-around;
+}

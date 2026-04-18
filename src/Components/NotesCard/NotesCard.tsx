@@ -1,11 +1,5 @@
+import type { Note } from "../../Types/Note";
 import styles from "./NotesCard.module.css";
-
-type Note = {
-  noteId: string;
-  noteContent: string;
-  createdAt: string;
-  updatedAt: string;
-};
 
 type NotesCardProps = {
   note: Note;

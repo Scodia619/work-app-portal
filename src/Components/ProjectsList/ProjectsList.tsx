@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import NotesCard from "../NotesCard/NotesCard";
-import styles from './NotesList.module.css'
-import { getAllNotes } from "../../api";
-import type { Note } from "../../Types/Note";
+import styles from '../NotesList/NotesList.module.css'
+import {getAllProjects } from "../../api";
+import type { Project } from "../../Types/Project";
+import ProjectsCard from "../ProjectsCard/ProjectsCard";
 
-export default function NotesList() {
-  const [notes, setNotes] = useState<Note[]>([]);
+export default function ProjectsList() {
+  const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
   const fetchNotes = async () => {
     try {
-      const data = await getAllNotes();
-      setNotes(data);
+      const data = await getAllProjects();
+      setProjects(data);
     } catch (err: any) {
       setError(err.message || "Something went wrong");
     } finally {
@@ -28,14 +28,14 @@ export default function NotesList() {
 
   return (
     <div className={styles.container}>
-      <h2>Notes</h2>
+      <h2>Projects</h2>
 
-      {notes.length === 0 ? (
+      {projects.length === 0 ? (
         <p>No notes found.</p>
       ) : (
         <ul className={styles.list}>
-            {notes.map((note) => (
-                <NotesCard key={note.noteId} note={note} />
+            {projects.map((project) => (
+                <ProjectsCard key={project.projectId} project={project} />
             ))}
         </ul>
       )}
