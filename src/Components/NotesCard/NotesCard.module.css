@@ -1,0 +1,14 @@
+.card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #3772FF;
+  width: 100%;
+  list-style: none;
+}
+
+.dates{
+    display: flex;
+    justify-content: space-between;
+}
