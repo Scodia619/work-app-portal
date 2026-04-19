@@ -3,4 +3,6 @@ export type Note = {
   createdAt: string;
   updatedAt: string;
   noteContent: string;
+  projectId?: string;
+  projectName?: string;
 };

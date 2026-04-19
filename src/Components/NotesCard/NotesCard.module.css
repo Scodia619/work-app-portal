@@ -8,7 +8,16 @@
   list-style: none;
 }
 
+.card:hover{
+  cursor: pointer;
+}
+
 .dates{
     display: flex;
     justify-content: space-between;
+}
+
+h3{
+  padding: 0;
+  margin: 0;
 }

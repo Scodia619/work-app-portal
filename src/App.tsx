@@ -1,14 +1,17 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
-import NotesList from './Components/NotesList/NotesList'
-import ProjectsList from './Components/ProjectsList/ProjectsList'
+import Project from "./Pages/Project/Project";
+import Home from "./Pages/Home/Home";
 
 function App() {
-  return (
-    <div className='main'>
-      <ProjectsList />
-      <NotesList />
-    </div>
-  )
+    return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects/:projectId" element={<Project />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App

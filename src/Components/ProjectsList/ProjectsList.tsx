@@ -10,19 +10,20 @@ export default function ProjectsList() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-  const fetchNotes = async () => {
-    try {
-      const data = await getAllProjects();
-      setProjects(data);
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
+    const fetchProjects = async () => {
+      try {
+        const data = await getAllProjects();
+        setProjects(data);
+      } catch (err: any) {
+        setError(err.message || "Something went wrong");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  fetchNotes();
-}, []);
+    fetchProjects();
+  }, []);
+  
   if (loading) return <p>Loading notes...</p>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 

@@ -11,7 +11,26 @@ export const getAllNotes = async (): Promise<Note[]> => {
   return res.data;
 };
 
+export const getAllNotesByProjectId = async (projectId: string): Promise<Note[]> => {
+  const res = await api.get<Note[]>(`/notes/GetNotesByProjectId?projectId=${projectId}`);
+  return res.data;
+};
+
 export const getAllProjects = async (): Promise<Project[]> => {
   const res = await api.get<Project[]>("/projects");
   return res.data;
+};
+
+export const getProjectById = async (projectId?: string): Promise<Project> => {
+  const res = await api.get<Project>(`/projects/${projectId}`);
+  return res.data;
+};
+
+export const createNote = async (noteContent: string, projectId?: string | null) => {
+  const response = await api.post("/notes", {
+    noteContent,
+    projectId
+  });
+
+  return response.data;
 };

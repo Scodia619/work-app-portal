@@ -8,6 +8,7 @@ type NotesCardProps = {
 export default function NotesCard({ note }: NotesCardProps) {
   return (
     <li className={styles.card}>
+      <h3>{note.projectName ?? "General"}</h3>
       <p>{note.noteContent}</p>
 
       <div className={styles.dates}>

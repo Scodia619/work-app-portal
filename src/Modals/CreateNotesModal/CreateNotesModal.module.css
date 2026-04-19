@@ -1,0 +1,74 @@
+*{
+    font-family: "Roboto Slab", serif;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background-color: #3772FF;
+    padding: 20px;
+    border-radius: 1rem;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeBtn{
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.dropdown{
+    width: 100%;
+    padding: 8px; 
+    margin-top: 4px;
+    border-radius: 1rem;
+    border: none;
+    background-color: white;
+}
+
+textarea{
+    width: 95%;
+    padding: 8px;
+    margin-top: 4px;
+    resize: vertical;
+    min-height: 120px;
+    border-radius: 1rem;
+    border: none;
+}
+
+.noteContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.submit{
+    border-radius: 999px;
+    padding: 10px;
+    border: none;
+    background-color: #2D3047;
+    color: white;
+}
+
+.submit:hover{
+    background-color: #272b3f;
+    cursor: pointer;
+}
